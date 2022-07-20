@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
-let rowCount = 30;
-let colCount = 30;
+let rowCount = 50;
+let colCount = 50;
 let cellSize = '10px'
 let generationCount = 0;
 let initGrid: number[][] = [];
@@ -86,7 +86,7 @@ function App () {
             <div key={i+'_'+j} style={{
               width: cellSize,
               height: cellSize,
-              backgroundColor: grid[i][j] ? 'green' : '',
+              backgroundColor: grid[i][j] ? 'blue' : '',
               // border: 'solid 0.1px red'
             }}>
             </div>
