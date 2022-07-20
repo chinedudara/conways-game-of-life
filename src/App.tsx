@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
-let rowCount = 100;
-let colCount = 100;
-let cellSize = '5px'
+let rowCount = 30;
+let colCount = 30;
+let cellSize = '10px'
 let generationCount = 0;
 let initGrid: number[][] = [];
 
@@ -18,6 +18,9 @@ function generateGrid(){
   }
   return grid;
 }
+
+console.log(generateGrid());
+
 
 function nextGeneration(grid: number[][]){
   let nextGrid = grid.map((row) => [...row]);
@@ -54,7 +57,7 @@ function nextGeneration(grid: number[][]){
   return nextGrid;
 }
 
-// console.table(generateGrid());
+console.table(generateGrid());
 
 function App () {
   const [grid, setGrid] = useState(initGrid);
@@ -65,7 +68,7 @@ function App () {
       setGrid(nextGeneration(grid));
       generationCount++;
       // console.log(generationCount);      
-    }, 50)
+    }, 30)
 
     return () => {
       clearInterval(runSim);
@@ -83,7 +86,7 @@ function App () {
             <div key={i+'_'+j} style={{
               width: cellSize,
               height: cellSize,
-              backgroundColor: grid[i][j] ? 'red' : '',
+              backgroundColor: grid[i][j] ? 'green' : '',
               // border: 'solid 0.1px red'
             }}>
             </div>
